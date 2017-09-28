@@ -9,7 +9,7 @@ If you find this program useful in your work, please give credit by citing the a
 You need MATLAB software to use this program.
 
 ## Usage
-You can run the automated spike sorting on the `spikes` matrix (rows are spikes, columns are samples) which contains the detected and aligned spikes you want to sort:
+You can run the automated spike sorting algorithm on the `spikes` matrix (rows are spikes, columns are samples) which contains the detected and aligned spikes you want to sort:
 ```
 >>> [labels, projU] = spikeSort(spikes)
 ```
@@ -24,38 +24,37 @@ spikes, Input spike matrix, dim:(n_spikes, n_sample_per_spike)
 
 Optional (parameter name/value pairs):
 
-'sortMethod'   -  Sorting method 'LDA-Km' or 'LDA-GMM' (default).
-'numClusRange'   -  Search range to determine the number of cluster.
-e.g. [3] to force 3 clusters. default = [2, 6]
-'Dim'   -  LDA subspace dimension. default = 2
-'maxIter'   -  Maximum number of iteration between subspace
-selection and clustering. default = 30
+   'sortMethod'   -  Sorting method 'LDA-Km' or 'LDA-GMM' (default).
+ 'numClusRange'   -  Search range to determine the number of cluster.
+                    e.g. [3] to force 3 clusters. default = [2, 6]
+          'Dim'   -  LDA subspace dimension. default = 2
+      'maxIter'   -  Maximum number of iteration between subspace
+                    selection and clustering. default = 30
 'minSampleSize'   -  Sample size for initialization.
-default = min(1000, total number of spikes.
-'SampIter'   -  Number of iterations for initialization. default = 5
-'minClusSize'   -  Minimum number of spikes to form a cluster.
-defaut = 50
-'earlyStop'   -  Stop the search for the number of clusters on the
-first occurance of over-clustering. default = false
-'doPlot'   -  Plot the sorting results. default = true
+                     default = min(1000, total number of spikes.
+     'SampIter'   -  Number of iterations for initialization. default = 5
+  'minClusSize'   -  Minimum number of spikes to form a cluster. defaut = 50
+    'earlyStop'   -  Stop the search for the number of clusters on the
+                     first occurance of over-clustering. default = false
+       'doPlot'   -  Plot the sorting results. default = true
 
 ```
 
 ## Licence
-    Copyright (C) 2017, Mohammad Reza Keshtkaran <keshtkaran.github@gmail.com>
+Copyright (C) 2017, Mohammad Reza Keshtkaran <keshtkaran.github@gmail.com>
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
